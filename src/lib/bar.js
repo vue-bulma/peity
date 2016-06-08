@@ -11,8 +11,8 @@ export default {
 
   draw (opts) {
     var values = this.values()
-    , max = Math.max.apply(Math, opts.max == undefined ? values : values.concat(opts.max))
-    , min = Math.min.apply(Math, opts.min == undefined ? values : values.concat(opts.min))
+    var max = Math.max.apply(Math, opts.max ? values.concat(opts.max) : values)
+    var min = Math.min.apply(Math, opts.min ? values.concat(opts.min) : values)
 
     var $svg = this.prepare(opts.width, opts.height)
     var rect = $svg.getBoundingClientRect()
@@ -23,11 +23,11 @@ export default {
     var padding = opts.padding
     var fill = this.fill()
 
-    var xScale = this.x = function(input) {
+    var xScale = this.x = (input) => {
       return input * width / values.length
     }
 
-    var yScale = this.y = function(input) {
+    var yScale = this.y = (input) => {
       return height - (
         diff
         ? ((input - min) / diff) * height
@@ -37,12 +37,12 @@ export default {
 
     for (var i = 0; i < values.length; i++) {
       var x = xScale(i + padding)
-      , w = xScale(i + 1 - padding) - x
-      , value = values[i]
-      , valueY = yScale(value)
-      , y1 = valueY
-      , y2 = valueY
-      , h
+      var w = xScale(i + 1 - padding) - x
+      var value = values[i]
+      var valueY = yScale(value)
+      var y1 = valueY
+      var y2 = valueY
+      var h
 
       if (!diff) {
         h = 1
@@ -54,7 +54,7 @@ export default {
 
       h = y2 - y1
 
-      if (h == 0) {
+      if (h === 0) {
         h = 1
         if (max > 0 && diff) y1--
       }

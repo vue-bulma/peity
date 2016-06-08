@@ -10,11 +10,11 @@ export default {
     width: 32
   },
 
-  draw(opts) {
+  draw (opts) {
     var values = this.values()
-    if (values.length == 1) values.push(values[0])
-    var max = Math.max.apply(Math, opts.max == undefined ? values : values.concat(opts.max)),
-      min = Math.min.apply(Math, opts.min == undefined ? values : values.concat(opts.min))
+    if (values.length === 1) values.push(values[0])
+    var max = Math.max.apply(Math, opts.max ? values.concat(opts.max) : values)
+    var min = Math.min.apply(Math, opts.min ? values.concat(opts.min) : values)
 
     var $svg = this.prepare(opts.width, opts.height)
     var rect = $svg.getBoundingClientRect()
@@ -23,11 +23,11 @@ export default {
     var height = rect.height - strokeWidth
     var diff = max - min
 
-    var xScale = this.x = function(input) {
+    var xScale = this.x = (input) => {
       return input * (width / (values.length - 1))
     }
 
-    var yScale = this.y = function(input) {
+    var yScale = this.y = (input) => {
       var y = height
 
       if (diff) {
@@ -37,8 +37,8 @@ export default {
       return y + strokeWidth / 2
     }
 
-    var zero = yScale(Math.max(min, 0)),
-      coords = [0, zero]
+    var zero = yScale(Math.max(min, 0))
+    var coords = [0, zero]
 
     for (var i = 0; i < values.length; i++) {
       coords.push(
