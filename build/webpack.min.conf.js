@@ -1,5 +1,4 @@
 const webpack = require('webpack')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const base = require('./webpack.base.conf')
 
 var config = Object.assign({}, base)
@@ -17,11 +16,7 @@ config.plugins = (config.plugins || []).concat([
       warnings: false
     }
   }),
-  // new CopyWebpackPlugin([
-  //   {
-  //     from: './src/Peity.vue'
-  //   },
-  // ]),
+
   new webpack.optimize.OccurenceOrderPlugin()
 ])
 
