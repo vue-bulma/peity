@@ -6,7 +6,7 @@ A Vue version of an excellent [peity][] library for beautiful mini <svg> graphs.
 
 ## Usage
 
-```
+```vue
 <template>
   <peity :type="'pie'" :options="{ 'fill': ['red', '#eeeeee'], width: 50, height:50,  'innerRadius': 10, 'radius': 40 }" :data="pieData"></peity>
 </template>
