@@ -1,8 +1,6 @@
 # Peity
 
-A Vue version of an excellent [peity][] library for beautiful mini <svg> graphs.
-
-[peity]: https://github.com/benpickles/peity
+A Vue version of an excellent [peity](https://github.com/benpickles/peity) library for beautiful mini <svg> graphs.
 
 ## Usage
 
