@@ -23,14 +23,14 @@ export default {
       default: () => ({})
     }
   },
-  ready () {
-    this.chart = new Peity(this.$el, this.type, this.data, this.options)
-    this.chart.draw()
-  },
   data () {
     return {
       chart: null
     }
+  },
+  mounted () {
+    this.chart = new Peity(this.$el, this.type, this.data, this.options)
+    this.chart.draw()
   },
   watch: {
     data (val) {
