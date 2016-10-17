@@ -1,6 +1,8 @@
-import bar from './bar'
-import line from './line'
-import pie from './pie'
+'use strict'
+
+const bar = require('./bar')
+const line = require('./line')
+const pie = require('./pie')
 
 const svgElement = (tag, attrs) => {
   let e = document.createElementNS('http://www.w3.org/2000/svg', tag)
@@ -70,4 +72,4 @@ Peity.register('donut', pie)
 Peity.register('line', line)
 Peity.register('pie', pie)
 
-export default Peity
+module.exports = Peity

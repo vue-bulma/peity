@@ -1,9 +1,9 @@
 {
   "name": "vue-peity",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "A Vue version of an excellent peity library for beautiful mini <svg> graphs.",
   "author": "Fangdun Cai <cfddream@gmail.com>",
-  "repository": "fundon/vue-peity",
+  "repository": "vue-bulma/peity",
   "main": "dist/vue-peity.min.js",
   "keywords": [
     "vue",
@@ -17,20 +17,20 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "devDependencies": {
-    "babel-core": "^6.9.1",
-    "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-stage-2": "^6.5.0",
-    "css-loader": "^0.23.1",
-    "eslint": "^2.7.0",
-    "eslint-config-standard": "^5.1.0",
-    "eslint-loader": "^1.3.0",
-    "eslint-plugin-html": "1.5.1",
-    "eslint-plugin-promise": "^1.1.0",
-    "eslint-plugin-standard": "^1.3.2",
-    "vue-html-loader": "^1.1.0",
-    "vue-loader": "^8.1.1",
-    "vue-style-loader": "^1.0.0",
-    "webpack": "^1.12.13"
+    "babel-core": "6",
+    "babel-loader": "6",
+    "babel-preset-es2015": "6",
+    "babel-preset-stage-2": "6",
+    "css-loader": "0",
+    "eslint": "3",
+    "eslint-config-standard": "6",
+    "eslint-loader": "1",
+    "eslint-plugin-html": "1",
+    "eslint-plugin-promise": "3",
+    "eslint-plugin-standard": "2",
+    "vue-html-loader": "1",
+    "vue-loader": "9.7.0",
+    "vue-style-loader": "1",
+    "webpack": "1"
   }
 }

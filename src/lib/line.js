@@ -1,4 +1,6 @@
-export default {
+'use strict'
+
+module.exports = {
 
   options: {
     delimiter: ',',
@@ -13,8 +15,8 @@ export default {
   draw (opts) {
     var values = this.values()
     if (values.length === 1) values.push(values[0])
-    var max = Math.max.apply(Math, opts.max == undefined ? values : values.concat(opts.max))
-    var min = Math.min.apply(Math, opts.min == undefined ? values : values.concat(opts.min))
+    var max = Math.max.apply(Math, opts.max === undefined ? values : values.concat(opts.max))
+    var min = Math.min.apply(Math, opts.min === undefined ? values : values.concat(opts.min))
 
     var $svg = this.prepare(opts.width, opts.height)
     var rect = $svg.getBoundingClientRect()

@@ -12,7 +12,7 @@ export default {
     type: {
       type: String,
       required: true,
-      validator: (value) => types.indexOf(value) > -1
+      validator: value => types.indexOf(value) > -1
     },
     data: {
       type: String,

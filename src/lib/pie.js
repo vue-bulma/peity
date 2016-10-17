@@ -1,4 +1,6 @@
-export default {
+'use strict'
+
+module.exports = {
 
   options: {
     fill: ['#ff9900', '#fff4dd', '#ffc66e'],
