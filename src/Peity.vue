@@ -38,6 +38,12 @@ export default {
         this.chart.raw = val
         this.chart.draw()
       })
+    },
+    options (val) { 
+      this.$nextTick(() => { 
+        this.chart.options = val
+        this.chart.draw() 
+      }) 
     }
   }
 }
